@@ -1,0 +1,81 @@
+/*美化首页*/
+*{
+    margin: 0;
+    padding: 0;
+    /*内减模式*/
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.clearfix::after{
+    clear: both;
+}
+.header{
+    padding: 0 183px;
+    position:fixed;
+    width:100%;
+    height: 100px;
+    background-color: pink;
+}
+
+.wrapper{
+    margin: 0 auto;
+}
+.one{
+   width: 75%;
+    
+    height: 1000px;
+   padding-top: 100px;
+    
+}
+.header button{
+       width: 50px;
+       height: 50px;
+}
+.mulu{
+    position:fixed;
+    height: 80%;
+    width: 270px;
+    background-color: aliceblue;
+}
+.mu1{
+    width: 270px;
+    height: 66px;
+    padding: 1.3em 2em;
+}
+.kuang{
+    float: top;
+    width: 100%;
+    height: 30px;
+}
+.mulu li{
+   width: 244px;
+   height: 56px;;
+   padding: 1em 2em;
+
+}
+span{
+    width: 172px;
+    height: 40px;
+}
+ .content{
+    padding-left: 288px;
+    float: right;
+       
+ }
+
+ 。content div{
+     border-bottom: 1px;
+ }
+ p{
+    padding: 8px;
+    font-size: 18px;
+    text-indent: 2em;
+ }

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+  margin: 0;
+  padding: 0;
+  /*内减模式*/
+  box-sizing: border-box;
+}
+/* 删除格式 */
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.clearfix::after{
+  clear: both;
+}
+img{
+  pointer-events: none;
+  user-select:none;
+}
+    .top{
+      width: 100%;
+      height: 85px;
+      position: fixed;
+      background-color: rgb(255,192,203,0.6);
+      text-align: center;
+      
+      z-index: 3;
+    }
+    .top>button{
+      height: 90px;
+    }
+    #kuang{
+    /* display: none; */
+    height: 92px;
+    width: 100%;
+    }
+    #kuang>button>img{
+      width: 90px;
+      height: 90px;
+    }
+    .header>img{
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+    }
+   .context{
+    display: inline-block;
+   }
+    .one{
+      text-align: center;
+    }
+    .two{
+     position: relative;
+     background-color: rgb(255,192,203,0.6);
+     background-image: url(./image/background\(1\).png);
+   
+    }
+    .two>img{
+      position: absolute;
+       height: 960px;
+       top: -20px;
+       left: -50px;
+       display: block;
+    }
+    .txt{
+     /* float:right; */
+      width: 50%;
+      height: 940px;
+      /* background-color: pink; */
+      display: inline-block;
+      padding-right:100px ;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <button>首页</button>
+    <button id="expand">逐火十三英桀</button>
+    <button>永世乐土</button>
+    <div id="kuang">
+      
+      <button class="qs" ><img  src="./image/Engraving/1.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/2.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/3.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/4.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/5.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/6.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/7.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/8.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/9.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/10.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/11.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/12.webp" alt=""></button>
+      <button class="qs" ><img  src="./image/Engraving/13.webp" alt=""></button>
+    </div>
+  </div>
+  
+  <div class="header">
+    <img src="./image/Thirteen Heroes of Fire.png" alt="">
+  </div>
+  <div class="content">
+
+    <div class="one">
+      <img src="./image/Thirteen Heroes of Fire/1.webp" alt="">
+    </div>
+    <div class="two">
+      <img src="./image/figure/2.png" alt="">
+      <div class="txt"></div>
+    </div>
+    <div class="three"></div>
+  </div>
+  <script>
+    
+const arr=[
+  {url:'./image/Engraving/1.png',url2:'./image/Thirteen Heroes of Fire/1.webp',url3:'./image/figure/1.png'},
+  {url:'./image/Engraving/2.png',url2:'./image/Thirteen Heroes of Fire/2.webp',url3:'./image/figure/2.png'},
+  {url:'./image/Engraving/3.png',url2:'./image/Thirteen Heroes of Fire/3.webp',url3:'./image/figure/3.png'},
+  {url:'./image/Engraving/4.png',url2:'./image/Thirteen Heroes of Fire/4.webp',url3:'./image/figure/4.png'},
+  {url:'./image/Engraving/5.png',url2:'./image/Thirteen Heroes of Fire/5.webp',url3:'./image/figure/5.png'},
+  {url:'./image/Engraving/6.png',url2:'./image/Thirteen Heroes of Fire/6.webp',url3:'./image/figure/6.png'},
+  {url:'./image/Engraving/7.png',url2:'./image/Thirteen Heroes of Fire/7.webp',url3:'./image/figure/7.png'},
+  {url:'./image/Engraving/8.png',url2:'./image/Thirteen Heroes of Fire/8.webp',url3:'./image/figure/8.png'},
+  {url:'./image/Engraving/9.png',url2:'./image/Thirteen Heroes of Fire/9.webp',url3:'./image/figure/9.png'},
+  {url:'./image/Engraving/10.png',url2:'./image/Thirteen Heroes of Fire/10.webp',url3:'./image/figure/10.png'},
+  {url:'./image/Engraving/11.png',url2:'./image/Thirteen Heroes of Fire/11.webp',url3:'./image/figure/11.png'},
+  {url:'./image/Engraving/12.png',url2:'./image/Thirteen Heroes of Fire/12.webp',url3:'./image/figure/12.png'},
+  {url:'./image/Engraving/13.png',url2:'./image/Thirteen Heroes of Fire/13.webp',url3:'./image/figure/13.png'},
+]
+
+console.log(arr[0])
+ let buttons = document.querySelectorAll('.qs')
+ let img=document.querySelectorAll('.qs img')
+ let img2=document.querySelector('.one img')
+let img3=document.querySelector('.two img')
+//  let expand = document.getElementById('expand');
+// let kuang = document.getElementById('kuang');
+
+// expand.addEventListener('focus', function() {
+//   kuang.style.display = 'block'; // 鼠标悬停时显示 
+// });
+// expand.addEventListener('blur', function() {
+//   kuang.style.display = 'none'; // 鼠标离开时隐藏 
+// });
+
+
+for (let i = 0; i < buttons.length; i++) {
+  console.log(buttons)
+  buttons[i].addEventListener('click', function() {
+    // 在点击事件发生时执行的操作
+    img[i].src=arr[i].url
+    img2.src=arr[i].url2
+    img3.src=arr[i].url3
+    });
+}
+
+
+
+  </script>
+</body>
+</html>

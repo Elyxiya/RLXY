@@ -1,0 +1,154 @@
+/*美化首页*/
+*{
+  margin: 0;
+  padding: 0;
+  /*内减模式*/
+  box-sizing: border-box;
+}
+/* 删除格式 */
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.clearfix::after{
+  clear: both;
+}
+img{
+  pointer-events: none;
+  user-select:none;
+}
+/* 删除格式 */
+/* 顶部导航 */
+.header{
+  position: fixed;
+  text-align: center;
+  background-color: rgb(255, 192,203,0.5);
+  height: 85px;
+  width: 100%;
+  z-index: 4;
+}
+.header>button{
+  height: 85px;
+  background-color: transparent;
+  border: 0;
+  font-size: 30px;
+
+}
+*,*::after {
+ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body{
+  background-color: rgb(46, 68, 143);
+}
+.top{
+  width: 100%;
+  height: 200%;
+  /* z-index: 3; */
+}
+/* .neirong{
+  display: flex;
+ position: relative;
+} */
+.left{
+top: 0;
+position: fixed;
+display: none;
+justify-content: space-around;
+left: 0;
+  width: 92px;
+  height: 100%;
+  background-color: rgb(255, 192,203,0.5);
+  flex-direction: column;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  /* z-index: 3; */
+  
+}
+left>img{
+  width: 90px;
+ height: 90px;
+}
+.right{
+  position: fixed;
+  
+display: flex;
+justify-content: space-around;
+ right: 0;
+ top: 0;
+  width: 92px;
+  height: 100%;
+  background-color: rgb(255, 192,203,0.5);
+  /* z-index: 3;*/
+  flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap; 
+}
+.right>img{
+  width: 90px;
+ height: 90px;
+}
+.header>button>img{
+ width: 90px;
+ height: 90px;
+}
+
+.one{
+  
+  text-align: center;
+}
+.one>img{
+  width: 100%;
+  height: 100%;
+
+}
+.one1{
+  background-image: url(../image/10.jpg);
+  background-size: 100% 100%;
+ 
+}
+
+.one1>img{
+  width: 100%;
+  height: 100%;
+position: relative;
+bottom: 0;
+padding: 100px;
+}
+
+.one2{
+  display: inline-block;
+  /* position: relative; */
+  background-image: url(../image/background\(1\).png);
+  background-size: 100% 100%;
+  width: 100%;
+ 
+
+}
+.one2>img{
+  position: relative;
+  left: -34px;
+  display: block;
+width: 960px;
+float: left;
+bottom: 0;
+}
+.text{
+  display: inline-block;
+  position: relative;
+  right: 92px;
+
+  background-color: aliceblue;
+    display: flow-root;
+    width: 38%;
+    margin-top: 113px;
+    height: 60%;
+   
+}
