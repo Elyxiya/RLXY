@@ -4,28 +4,313 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./Css/geshi.css">
   <style>
     body{
       background-attachment: fixed;
-      background-image: url(./image/background（3）.webp);
+      /* background-image: url(./image/background（3）.webp); */
       background-size: 100% 100%;
  
     }
-    div{
-      height: 1000px;
+    .header{
+      position: relative;
       width: 100%;
-      /* background-color: rgb(255, 192, 203,0.5); */
+      height: 926px;
+      background-image: url(./image/Elysia/Elysia1.png);
+      background-size:100% ;
+      background-repeat: no-repeat;
+      
+    }
+    .header>img{
+     
+      width: 100%;
+      height: 100%;
+    
+    }
+    .sign{
+      position: absolute;
+     top: 630px;
+     left: calc(20%);
+      width: 60%;
+      height: 200px;
+      background-color: rgb(255, 192, 203,0.5);
+    }
+    .content{
+      overflow: hidden;
+      width: 100%;
+      height: 8000px;
+      position: absolute;
+      background-color: rgb(222,219,253);
+    }
+    .dao{ 
+       display: none; 
+      position: fixed;
+      top:0;
+      width: 100%;
+      height: 80px;
+      background-color: black;
+      z-index: 3;
+    }
+    .one{
+      height: 900px;
+      width:  100%;
+      background-image: url(./image/background（3）.webp);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+    .one .left{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      z-index: 1;
+    }
+    .le1{
+      position: absolute;
+      display: none;
+      width: 338px;
+      height: 900px;
+      z-index: 2;
+    }
+    .le1>img{
+      width: 338px;
+    }
+    .one .right{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      z-index: 1;
+    }
+    .ri1{
+      display: none;
+      position: absolute;
+      right: 0;
+      display:inline-block;
+      width: 345px;
+      height: 900px;
+      z-index: 2;
+    }
+    .ri1>img{
+      width: 345px;
+    }
+    .mirror{
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+      width: 200px;
+      height: 250px;
+      background-color: aliceblue;
+      z-index: 4;
+    }
+    .large{
+      position: absolute;
+      display: none;
+      width: 700px;
+      height: 900px;
+      background-size: 160%  300%;
+      background-repeat: no-repeat;
+      z-index: 3;
     }
   </style>
 </head>
 <body>
-  <div>
+  <div class="header">
+   <div class="sign"></div>
+  </div>
+  <div class="content">
+  <!-- <div class="dao"></div>  -->
+    <div class="one">
+    <!-- 左展示栏的设置 -->
+     <button class="left">
+    
+     </button>
+     <div class="le1">
+      <img src="./image/new/one.webp" alt="">
+      <div class="mirror"></div>
+     </div>
+
+
+
+     <!-- 右展示栏的设置 -->
+     <button class="right">
+
+     </button>
+     <div class="ri1">
+      <img src="./image/new/two.webp" alt="">
+      <div class="mirror"></div>
+     </div>
+
+
+     <div class="large"></div>
+    </div>
+
 
   </div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div>44444</div>
+  
 
+
+  
+
+  <script>
+    // 首页轮播效果设置
+    const header=document.querySelector('.header')
+    let i=1
+   
+    setInterval(function(){
+      console.log(i)
+      header.style.backgroundImage=`url(./image/Elysia/Elysia${i}.png)`
+      i++
+      if(i===7){
+        i=1
+      }
+    },6000)
+    //  导航滚动显示效果
+    // const dao=document.querySelector('.dao')
+    
+    // window.addEventListener('scroll',function(){
+    //   const n =document.documentElement.scrollTop
+      
+    //   if(n>=926){
+    //     dao.style.display='block'
+    //   }
+    //   else{
+    //     dao.style.display='none'
+    //   }
+    // })
+     // 礼服设计展示
+    //  (左)
+     const le1=document.querySelector('.one .le1')
+     const left=document.querySelector('.one .left')
+     console.log(le1)
+     console.log(left)
+     
+    left.addEventListener('mouseenter',function(){
+      le1.style.display='block'
+    })
+    le1.addEventListener('mouseleave',function(){
+      le1.style.display='none'
+    })
+    // （右）
+     const ri1=document.querySelector('.one .ri1')
+      const right=document.querySelector('.one .right')
+     console.log(ri1)
+      console.log(right)
+
+     right.addEventListener('mouseenter',function(){
+       ri1.style.display='inline-block'
+      })
+    ri1.addEventListener('mouseleave',function(){
+      ri1.style.display='none'
+    })
+
+    // 放大镜效果的制作
+    
+    // (左)
+    const large=document.querySelector('.one .large')
+    le1.addEventListener('mouseenter',show)
+    le1.addEventListener('mouseleave',hide)
+    let timeId=0
+
+    function show(){
+      clearInterval(timeId)
+    
+      
+      large.style.backgroundImage='url(./image/new/one.webp)'
+      large.style.display='block'
+      large.style.right=0
+     
+    }
+    function hide(){
+      timeId=setInterval(function(){
+        large.style.display='none'
+      },2000)
+    }
+   
+    // （右）
+    ri1.addEventListener('mouseenter',show2)
+    ri1.addEventListener('mouseleave',hide2)
+    
+
+    function show2(){
+      clearInterval(timeId)
+      
+      large.style.left=0
+      large.style.backgroundImage='url(./image/new/two.webp)'
+      large.style.display='block'
+ 
+    }
+    function hide2(){
+      timeId=setInterval(function(){
+        large.style.display='none'
+        // 删除“left”的影响
+        large.style.removeProperty('left')
+      },2000)
+    }
+    
+  // 放大镜移动
+  // 左
+    const leftMirror=document.querySelector('.le1 .mirror')
+    le1.addEventListener('mouseenter',function(){
+      leftMirror.style.display='block'
+    })
+    le1.addEventListener('mouseleave',function(){
+      leftMirror.style.display='none'
+    })
+    le1.addEventListener('mousemove',function(e){
+      let x=e.pageX - le1.getBoundingClientRect().left
+      let y=e.pageY - le1.getBoundingClientRect().top -document.documentElement.scrollTop
+    if(x>=0 && x<=338 && y>=0 && y<=900){
+      let mx=0,my=0
+      if(x<100)mx=0
+      if(x>=100 && x<= 238)mx=x-100
+      if(x>238)mx=138
+
+      if(y<125)my=0
+      if(y>=125 && y<= 765)my=y-125
+      if(y>765)my=650
+      leftMirror.style.left=mx+'px'
+      leftMirror.style.top=my+'px'
+      large.style.backgroundPositionX=-3*mx+'px'
+      large.style.backgroundPositionY=-2.8*my+'px'
+    }
+    })
+    // 右
+    large.style.removeProperty('backgroundPositionX')
+    large.style.removeProperty('backgroundPositionY')
+
+    const rightMirror=document.querySelector('.ri1 .mirror')
+    console.log(rightMirror)
+    ri1.addEventListener('mouseenter',function(){
+      rightMirror.style.display='block'
+    })
+    ri1.addEventListener('mouseleave',function(){
+      rightMirror.style.display='none'
+    })
+    ri1.addEventListener('mousemove',function(e){
+      let x=e.pageX - ri1.getBoundingClientRect().left
+      let y=e.pageY - ri1.getBoundingClientRect().top -document.documentElement.scrollTop
+    if(x>=0 && x<=338 && y>=0 && y<=900){
+      let mx=0,my=0
+      if(x<100)mx=0
+      if(x>=100 && x<= 238)mx=x-100
+      if(x>238)mx=138
+
+      if(y<125)my=0
+      if(y>=125 && y<= 765)my=y-125
+      if(y>765)my=650
+      rightMirror.style.left=mx+'px'
+      rightMirror.style.top=my+'px'
+      large.style.backgroundPositionX=-3*mx+'px'
+      large.style.backgroundPositionY=-2.8*my+'px'
+      }
+    })
+  </script>
 </body>
 </html>

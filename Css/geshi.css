@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  /*内减模式*/
+  box-sizing: border-box;
+}
+/* 删除格式 */
+li{
+  list-style: none;
+}
+button{
+  display: inline-block;
+
+  background: none;
+  border: 0cap;
+
+}
+a{
+  text-decoration: none;
+}
+
+.clearfix::after{
+  clear: both;
+}
+img{
+  pointer-events: none;
+  user-select:none;
+}
